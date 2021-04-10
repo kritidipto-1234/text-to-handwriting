@@ -19,19 +19,32 @@
     </style>
 </head>
 <body>
-    <button class="screenshotBtn" type="button">Generate Images</button>
-    <button class="marginBtn" type="button">Margin</button>
-    <button class="linesBtn" type="button">Lines</button>
-    <span >
-        <label for="cars">Choose a Font:</label>
-        <select class="availableFontSelector">
-            <option value="Default">Default Font</option>
-            <option value="homemade_apple">Homemade Apple</option>
-            <option value="QEAntonyLark">QeAntony Lark</option>
-            <option value="QESamRoberts2">Sam Roberts</option>
-            <option value="QEVRead">QEVRead</option>
-        </select>    
-    </span>
+    <div class="navBar">
+        <button class="screenshotBtn" type="button">Generate Images</button>
+        <button class="marginBtn" type="button">Margin</button>
+        <button class="linesBtn" type="button">Lines</button>
+
+        <div class="fontChooser">
+            <label for="cars">Choose a Font:</label>
+            <select class="availableFontSelector">
+                <option value="Default">Default Font</option>
+                <option value="homemade_apple">Homemade Apple</option>
+                <option value="QEAntonyLark">QeAntony Lark</option>
+                <option value="QESamRoberts2">Sam Roberts</option>
+                <option value="QEVRead">QEVRead</option>
+            </select>    
+        </div>
+
+        <div class="colorChooser">
+            <label for="cars">Choose a Color:</label>
+            <select class="availableColorSelector">
+                <option value="black">Black</option>
+                <option value="blue">Blue</option>
+                <option value="red">Red</option>
+                <option value="green">Green</option>
+            </select>  
+        </div>
+    </div>
 
     <div class="textEditor" >
         <div class="pageContainer">
@@ -45,12 +58,17 @@
             </div>
         </div>
     </div>
-    <span>Upload Font File</span> <input class="inputFile" accept=".ttf,.otf,.woff" type="file">
-    <br><br>
-    <span>You can download font files from <a target="_blank" href="https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm">here</a> </span>
-    <br><br>
-    <button style="margin: auto;display: block;" type="button" class="generatePdfBtn">Download All images as Pdf</button>
+    <br>
+    <div class="middler">
+        <span>Upload Font File : </span> <input class="inputFile" accept=".ttf,.otf,.woff" type="file">
+        <br>
+        <span>You can download font files from <a target="_blank" href="https://www.quantumenterprises.co.uk/handwriting-fonts/fontvault.htm">here</a> </span>
+    </div>
+        <br><br>
     <br>
     <div class="imageList"></div>
+    
+    <button type="button" class="generatePdfBtn">Download All images as Pdf</button>
+
 </body>
 </html>

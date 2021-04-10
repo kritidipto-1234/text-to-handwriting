@@ -19,6 +19,8 @@ button:hover{
 input{
     margin: 10px;
     font-size: 17px;
+    outline: none;
+    border: 1px solid black;
     cursor: pointer;
 }
 select{
@@ -27,8 +29,26 @@ select{
 .hidden{
     display: none;
 }
+
+.fontChooser{
+    padding: 10px;
+    background-color: #F0EDE9;
+    margin-right: 0px;
+    display: inline-block;
+}
+.colorChooser{
+    display: inline-block;
+    padding: 10px;
+    background-color: #F0EDE9;
+}
+
+body{
+
+}
 /* Text Editor */
 .textEditor{
+    margin: auto;
+    margin-top: 20px;
     font-family: "Custom Font";
     height:598px;
     width:440px;
@@ -39,6 +59,13 @@ select{
     overflow-y: scroll;
 }
 
+.middler{
+    max-width: 500px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    background-color:#F0EDE9 ;
+}
 .pageContainer{
     height:568px;
     margin: auto;
@@ -50,7 +77,12 @@ select{
     margin-bottom: 40px;
 }
 
- /* @font-face {
+.navBar{
+    display: block;
+    max-width: 930px;
+    margin: auto;
+}
+    /* @font-face {
      font-family: "Custom Font";
      src: url("../font/homemade-apple.regular.ttf")
  } */
@@ -118,7 +150,9 @@ select{
     overflow-x: scroll;
     display: flex;
     flex-direction: row;
-    max-width: 100%;
+    max-width: 70%;
+    min-width: 800px;
+    margin: auto;
     border: 1px solid blue;
     min-height: 650px;
 }
@@ -177,6 +211,11 @@ select{
 }
 .deleteImgBtn:hover{
     background-color: grey;
+}
+body>.generatePdfBtn{
+    margin: auto;display: block;
+    margin-top: 30px;
+    margin-bottom: 150px;
 }
 
 /* Image List */

@@ -6,4 +6,5 @@ import {} from './state.js';
 import {} from './config.js';
 import {} from './margin.js';
 import {} from './ruledLines.js';
+import {} from './inkColor.js';
 
