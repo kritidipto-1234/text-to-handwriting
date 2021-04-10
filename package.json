@@ -6,7 +6,7 @@
   "scripts": {
     "start": "parcel index.html",
     "build": "parcel build index.html --out-dir docs --public-url ./",
-    "deploy": "git add . && git commit -a -m 'some changes' && git push"
+    "deploy": "git add . && git commit -m 'some changes' && git push"
   },
   "keywords": [],
   "author": "",
