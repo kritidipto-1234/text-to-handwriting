@@ -1,0 +1,183 @@
+*{
+    box-sizing: border-box;
+}
+:root{
+    --margin-color: rgb(245, 90, 90);
+}
+button{
+    margin: 10px;
+    font-size: 17px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: 1px solid black;
+    outline: none;
+    padding: 5px 15px;
+}
+button:hover{
+    background-color: gray;
+}
+input{
+    margin: 10px;
+    font-size: 17px;
+    cursor: pointer;
+}
+select{
+    outline: none;
+}
+.hidden{
+    display: none;
+}
+/* Text Editor */
+.textEditor{
+    font-family: "Custom Font";
+    height:598px;
+    width:440px;
+    border: 1px solid blue;
+    overflow-x: hidden;
+    outline: none;
+    padding: 15px;
+    overflow-y: scroll;
+}
+
+.pageContainer{
+    height:568px;
+    margin: auto;
+    width:400px;
+    display: flex;
+    background-color: rgb(240, 237, 233);
+    flex-direction: column;
+    border: 1px solid black;
+    margin-bottom: 40px;
+}
+
+ /* @font-face {
+     font-family: "Custom Font";
+     src: url("../font/homemade-apple.regular.ttf")
+ } */
+/* pre{
+    white-space: pre-wrap;
+    background: #EEE;
+} */
+
+.upper{
+    flex:1;
+    min-height: 10%;
+    display: flex;
+}
+
+.lower{
+    min-height: 90%;
+    max-height: 568px;
+    flex: 9;
+    display: flex;
+}
+.pageContainer div{
+    font-size: 12px;
+    overflow: hidden;
+    outline: none;
+    line-height: 22px;   
+}
+
+.pageTopLeft{
+    flex: 1.3;
+    border-bottom: 2px solid var(--margin-color);
+    border-right: 2px solid var(--margin-color);
+}
+.pageTop{
+    flex: 9;
+    z-index: 3;
+    border-bottom: 2px solid var(--margin-color);
+}
+
+.pageLeft{
+    flex: 1.3;
+    border-right: 2px solid var(--margin-color);
+
+}
+.pageWrapper{
+
+    height: 100%;
+    flex: 9;
+}
+.page{
+    display: inline-block;
+
+    height:100%;
+    width:100%;
+    /* overflow: hidden; */
+    word-break: break-all;
+}
+
+
+
+/* Text Editor */
+
+
+/* Image List */
+.imageList{
+    overflow-x: scroll;
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    border: 1px solid blue;
+    min-height: 650px;
+}
+.imageList .imageContainer{
+    border: 1px solid black;
+    margin: 10px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    padding: 10px;
+    position: relative;
+    flex-direction: column;
+}
+.imageContainer img{
+    height: 568px;
+    width: 400px;
+}
+.imageContainer canvas{
+    height: 568px;
+    width: 400px;
+}
+.imageContainer .downloadBtn{
+    height: 30px;
+    width: 130px;
+    text-decoration: none;
+    color: black;
+    background-color: rgb(202, 201, 201);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    margin: 10px;
+    border: 1px solid black;
+}
+.downloadBtn:hover{
+    background-color: gray;
+}
+.imageContainer .deleteImgBtn{
+    border-radius: 50%;
+    background-color:rgb(202, 201, 201);
+    outline: none;
+    padding: 0px;
+    width: 20px;
+    font-size: 14px;
+    border: none;
+    height: 20px;
+    display: flex;
+    font-weight: bolder;
+    color: white;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+}
+.deleteImgBtn:hover{
+    background-color: grey;
+}
+
+/* Image List */
+
