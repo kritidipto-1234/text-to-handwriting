@@ -25,7 +25,7 @@ marginBtn.addEventListener('click',function()
     `;
 
     let currPage=document.querySelector('.page');//first page
-    setTimeout(startCorrectingFrom.bind(null,currPage),100);//font loading takes time
+    setTimeout(startCorrectingFrom.bind(null,currPage),0);//font loading takes time
 });
 
 

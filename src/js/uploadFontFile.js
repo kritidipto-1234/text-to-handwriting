@@ -33,7 +33,7 @@ inputFile.addEventListener('change',async function(e)
     }
     `;
     let currPage=document.querySelector('.page');//first page
-    setTimeout(startCorrectingFrom.bind(null,currPage),100);
+    setTimeout(startCorrectingFrom.bind(null,currPage),150);
 });
 
 fontSelector.addEventListener('input',async function(e)
@@ -56,6 +56,6 @@ fontSelector.addEventListener('input',async function(e)
     }
     `;
     let currPage=document.querySelector('.page');//first page
-    setTimeout(startCorrectingFrom.bind(null,currPage),100);
+    setTimeout(startCorrectingFrom.bind(null,currPage),150);
 })
 
