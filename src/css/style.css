@@ -65,6 +65,7 @@ body{
 .middler{
     max-width: 500px;
     text-align: center;
+    margin: 30px 0px;
     padding: 10px;
     background-color:#F0EDE9 ;
 }
@@ -216,18 +217,17 @@ body{
     outline: none;
     padding: 0px;
     width: 20px;
-    font-size: 14px;
+    font-size: 10px;
+    line-height: 14px;
     border: none;
     height: 20px;
-    display: flex;
     font-weight: bolder;
     color: white;
     position: absolute;
     top: 10px;
     right: 10px;
     background-color: red;
-    justify-content: center;
-    align-items: center;
+
 }
 .deleteImgBtn:hover{
     background-color: grey;

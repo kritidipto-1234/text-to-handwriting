@@ -20,7 +20,7 @@ screenshotBtn.addEventListener('click',function()
                     imageList.appendChild(newDiv);
                     newDiv.innerHTML=
                     `
-                    <button class="deleteImgBtn" type="button">x</button>
+                    <button class="deleteImgBtn" type="button">X</button>
                     <img  src="${canvas.toDataURL('image/jpeg',3)}" class="canvasImg" alt="">
                     <a class="downloadBtn" download='handwritten.jpeg' href="${canvas.toDataURL('image/jpeg', 1)}" t>Download Image</a>
                     `;
