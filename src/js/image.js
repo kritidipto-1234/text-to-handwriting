@@ -15,13 +15,15 @@ screenshotBtn.addEventListener('click',function()
             .then
             ((canvas)=>
                 {
-                    const markup=
-                    `<div class="imageContainer">
+                    const newDiv=document.createElement('div');
+                    newDiv.classList.add('imageContainer');
+                    imageList.appendChild(newDiv);
+                    newDiv.innerHTML=
+                    `
                     <button class="deleteImgBtn" type="button">x</button>
                     <img  src="${canvas.toDataURL('image/jpeg',3)}" class="canvasImg" alt="">
                     <a class="downloadBtn" download='handwritten.jpeg' href="${canvas.toDataURL('image/jpeg', 1)}" t>Download Image</a>
-                    </div>`;
-                    imageList.insertAdjacentHTML('beforeend',markup);
+                    `;
                     page.style.border='1px solid black';
                 }
             )
