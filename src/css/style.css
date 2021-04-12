@@ -43,10 +43,12 @@ select{
 }
 
 body{
+    display: flex;
+    flex-direction: column;
 }
 /* Text Editor */
 .textEditor{
-    margin: auto;
+    /* margin: auto; */
     margin-top: 20px;
     font-family: "Custom Font";
     height:598px;
@@ -61,7 +63,6 @@ body{
 .middler{
     max-width: 500px;
     text-align: center;
-    margin: auto;
     padding: 10px;
     background-color:#F0EDE9 ;
 }
@@ -79,7 +80,6 @@ body{
 .navBar{
     display: block;
     max-width: 930px;
-    margin: auto;
 }
     /* @font-face {
      font-family: "Custom Font";
@@ -165,8 +165,7 @@ body{
     overflow-x: scroll;
     display: flex;
     flex-direction: row;
-    max-width: 70%;
-    min-width: 800px;
+    width: 90%;
     margin: auto;
     border: 1px solid blue;
     min-height: 650px;
