@@ -17,7 +17,7 @@ const state=
     {
         this.currentPage=page;
     },
-    currentFontUrl:fontObj['Default'],
+    currentFontUrl:fontObj['homemade_apple'],
 }
 
 export {state};
