@@ -1,3 +1,8 @@
+import "regenerator-runtime/runtime.js";
+import {fontObj} from './config.js';
+
+
+
 const state=
 {
     currentPage:document.querySelector('.page'),
@@ -11,6 +16,8 @@ const state=
     updateCurrentPage(page)
     {
         this.currentPage=page;
-    }
+    },
+    currentFontUrl:fontObj['Default'],
 }
+
 export {state};

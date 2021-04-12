@@ -2,8 +2,6 @@ const textEditor=document.querySelector('.textEditor');
 
 import {state} from './state.js'
 
-
-
 document.addEventListener('keydown', event => //to avoid mozilla from creating divs on enter
 {  
    if (event.key === 'Enter') 

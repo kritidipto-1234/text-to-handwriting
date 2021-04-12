@@ -1,38 +1,61 @@
 const inputFile=document.querySelector('.inputFile');
 const fontSelector=document.querySelector('.availableFontSelector');
+const customCss=document.querySelector('style');
 
-import "regenerator-runtime/runtime.js";
-import homemade_apple from '../font/homemade-apple.regular.ttf';
-import QEAntonyLark from '../font/QEAntonyLark.ttf';
-import QESamRoberts2 from '../font/QESamRoberts2.ttf';
-import QEVRead from '../font/QEVRead.ttf';
-import Default from '../font/times_new_roman.ttf';
 
+
+import {state} from './state.js';
+import {fontObj} from './config.js';
 import { startCorrectingFrom} from './pageHandler.js';
 
 
-const fontObj={homemade_apple,QEAntonyLark,QESamRoberts2,QEVRead,Default};
 let fileUrl;
 
 inputFile.addEventListener('change',async function(e)
 {
     const fileObj=this.files[0];
-    window.URL.revokeObjectURL(fileUrl);
     fileUrl=window.URL.createObjectURL(fileObj);
-    let newFont= new FontFace("Custom Font",`url("${fileUrl}")`);
-    const fontPromise=await newFont.load();
-    document.fonts.add(fontPromise);
+    state.currentFontUrl=fileUrl;
+    customCss.innerHTML=
+    `
+    @font-face 
+    {
+        font-family: "Custom Font";
+        src: url(${state.currentFontUrl});
+    }
+    .pageExtra
+    {
+        ${state.margin?'':'display: none;'}
+    } 
+    .page,.pageLeft
+    {
+        ${state.ruled?'background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;':''}
+    }
+    `;
     let currPage=document.querySelector('.page');//first page
-    startCorrectingFrom(currPage);
+    setTimeout(startCorrectingFrom.bind(null,currPage),100);
 });
 
 fontSelector.addEventListener('input',async function(e)
 {    
-    let myFileUrl=fontObj[e.target.value];
-    let newFont= new FontFace("Custom Font",`url(${myFileUrl})`);
-    const fontPromise=await newFont.load();
-    document.fonts.add(newFont);
+    state.currentFontUrl=fontObj[e.target.value];
+    customCss.innerHTML=
+    `
+    @font-face 
+    {
+        font-family: "Custom Font";
+        src: url(${state.currentFontUrl});
+    }
+    .pageExtra
+    {
+        ${state.margin?'':'display: none;'}
+    } 
+    .page,.pageLeft
+    {
+        ${state.ruled?'background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;':''}
+    }
+    `;
     let currPage=document.querySelector('.page');//first page
-    startCorrectingFrom(currPage);
+    setTimeout(startCorrectingFrom.bind(null,currPage),100);
 })
 
