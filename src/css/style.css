@@ -50,6 +50,7 @@ body{
 .textEditor{
     /* margin: auto; */
     margin-top: 20px;
+    background-color: rgb(250, 243, 244);
     font-family: "Custom Font";
     height:598px;
     width:440px;
@@ -162,17 +163,21 @@ body{
 
 /* Image List */
 .imageList{
+    position: relative;
     overflow-x: scroll;
     display: flex;
     flex-direction: row;
-    width: 90%;
+    width: 100%;
+    background-color: rgb(250, 243, 244);
     margin: auto;
+    padding: 10px;
     border: 1px solid blue;
     min-height: 650px;
 }
 .imageList .imageContainer{
+    background-color: white;
     border: 1px solid black;
-    margin: 10px;
+    margin-right: 10px;
     justify-content: center;
     align-items: center;
     display: flex;
@@ -232,5 +237,12 @@ body>.generatePdfBtn{
     margin-bottom: 150px;
 }
 
+.imageList .message{
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top:50%;
+    font-size: large;
+    left: 50%;
+}
 /* Image List */
 
