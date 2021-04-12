@@ -4,6 +4,7 @@
 :root{
     --margin-color: rgb(245, 90, 90);
 }
+
 button{
     margin: 10px;
     font-size: 17px;
