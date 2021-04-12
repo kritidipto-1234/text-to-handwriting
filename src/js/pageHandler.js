@@ -49,11 +49,20 @@ textEditor.addEventListener('paste', function (e)
    fixNoEnter();
 });
 
+textEditor.addEventListener('focusin',function(e)
+{
+   const page=e.target.closest('.page');
+   if (!page) return;
+   state.updateCurrentPage(page);
+});
+
+
 function correctOverflow(page)//corrects overflow in currentPage
 {
    if(checkOverflow(page) && page.dataset.pageno==state.totalPages)//if this page is overflowing and last page
    {
       makeNewPage();
+      state.currentPage.blur();
       // page.nextElementSibling.focus();
    }
    if (checkOverflow(page) && page.dataset.pageno!=state.totalPages)//if this page is overflowing and nt last page
@@ -80,6 +89,7 @@ function correctOverflow(page)//corrects overflow in currentPage
                nextPage.insertAdjacentHTML('afterbegin',lastText[lastText.length-1]);
             }
          }
+         state.currentPage.blur();
       }
       // nextPage.focus();
    }
