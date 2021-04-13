@@ -8,12 +8,10 @@ import {pageHeight,pageWidth} from './config.js';
 
 screenshotBtn.addEventListener('click',async function()
 {
-    window.scrollTo(0,0);
-    document.body.style.overflow='hidden';
     for (let page of [...document.querySelectorAll('.pageContainer')])
     {
         page.style.border='none';
-        const canvas=await html2canvas(page,{scale: 3,height:pageHeight,width:pageWidth})
+        const canvas=await html2canvas(page,{scale: 3,scrollX: -window.scrollX,scrollY: -window.scrollY,height:pageHeight,width:pageWidth})
             
         const newDiv=document.createElement('div');
         newDiv.classList.add('imageContainer');
@@ -26,7 +24,6 @@ screenshotBtn.addEventListener('click',async function()
         `;
         page.style.border='1px solid black';
     };
-    document.body.style.overflow='auto';
     const {left,top}=imageList.getBoundingClientRect();
     window.scrollTo({left:left+pageXOffset,top:top+pageYOffset,behavior:'smooth'});
 });
