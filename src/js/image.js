@@ -8,6 +8,8 @@ import {pageHeight,pageWidth} from './config.js';
 
 screenshotBtn.addEventListener('click',async function()
 {
+    window.scrollTo(0,0);
+    document.body.style.overflow='hidden';
     for (let page of [...document.querySelectorAll('.pageContainer')])
     {
         page.style.border='none';
@@ -23,9 +25,8 @@ screenshotBtn.addEventListener('click',async function()
         <a class="downloadBtn" download='handwritten.jpeg' href="${canvas.toDataURL('image/jpeg', 1)}" t>Download Image</a>
         `;
         page.style.border='1px solid black';
-            
-
     };
+    document.body.style.overflow='auto';
     const {left,top}=imageList.getBoundingClientRect();
     window.scrollTo({left:left+pageXOffset,top:top+pageYOffset,behavior:'smooth'});
 });
