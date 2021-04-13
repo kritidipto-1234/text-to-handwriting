@@ -1,4 +1,5 @@
 const textEditor=document.querySelector('.textEditor');
+const correctTextBtn=document.querySelector('.correctTextBtn');
 
 import {state} from './state.js'
 
@@ -19,6 +20,8 @@ function startCorrectingFrom(currPage)
       currPage=currPage.closest('.pageContainer').nextElementSibling?.querySelector('.page');
    }
 }
+
+correctTextBtn.addEventListener('click',startCorrectingFrom.bind(null,document.querySelector('.page')));
 
 textEditor.addEventListener('input',(m)=>
 {

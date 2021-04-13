@@ -27,7 +27,6 @@ screenshotBtn.addEventListener('click',async function()
 
     };
     const {left,top}=imageList.getBoundingClientRect();
-    console.log(left+pageXOffset,top+pageYOffset);
     window.scrollTo({left:left+pageXOffset,top:top+pageYOffset,behavior:'smooth'});
 });
 

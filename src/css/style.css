@@ -84,7 +84,6 @@ body{
 
 .navBar{
     display: block;
-    max-width: 930px;
 }
     /* @font-face {
      font-family: "Custom Font";
@@ -125,18 +124,26 @@ body{
 }
 
 .pageTopLeft{
+    padding-left: 6px;
+    width: 100%;
     flex: 1.3;
+    max-width: calc(130%/10.3);
     border-bottom: 2px solid var(--margin-color);
     border-right: 2px solid var(--margin-color);
 }
 .pageTop{
+    width: 100%;
+    padding-right: 6px;
     flex: 9;
+    max-width: calc(900%/10.3);
     z-index: 3;
     border-bottom: 2px solid var(--margin-color);
 }
 
 .pageLeft{
+    padding-left: 6px;
     flex: 1.3;
+    max-width: calc(130%/10.3);
     border-right: 2px solid var(--margin-color);
 
 }
@@ -151,6 +158,7 @@ body{
     font-family: 'Custom Font';
     display: inline-block;
     height:100%;
+    padding-right: 6px;
     width:100%;
     /* overflow: scroll; */
     word-break: break-all;
