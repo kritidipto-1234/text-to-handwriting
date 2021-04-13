@@ -159,6 +159,7 @@ body{
     display: inline-block;
     height:100%;
     padding-right: 6px;
+    padding-left: 6px;
     width:100%;
     /* overflow: scroll; */
     word-break: break-all;
