@@ -73,7 +73,7 @@ function continueLine(e) {
     if (!canvas) return;
     const { x, y } = getMousePosition(e.target.closest(".drawCanvas"), e);
     ctx.lineTo(x, y);
-    // ctx.moveTo(x, y);
+    ctx.moveTo(x, y);
     ctx.stroke();
 }
 
