@@ -1,23 +1,18 @@
-const inputFile=document.querySelector('.inputFile');
-const fontSelector=document.querySelector('.availableFontSelector');
-const customCss=document.querySelector('style');
+const inputFile = document.querySelector(".inputFile");
+const fontSelector = document.querySelector(".availableFontSelector");
+const customCss = document.querySelector("style");
 
-
-
-import {state} from './state.js';
-import {fontObj} from './config.js';
-import { startCorrectingFrom} from './pageHandler.js';
-
+import { state } from "./state.js";
+import { fontObj } from "./config.js";
+import { startCorrectingFrom } from "./pageHandler.js";
 
 let fileUrl;
 
-inputFile.addEventListener('change',async function(e)
-{
-    const fileObj=this.files[0];
-    fileUrl=window.URL.createObjectURL(fileObj);
-    state.currentFontUrl=fileUrl;
-    customCss.innerHTML=
-    `
+inputFile.addEventListener("change", async function (e) {
+    const fileObj = this.files[0];
+    fileUrl = window.URL.createObjectURL(fileObj);
+    state.currentFontUrl = fileUrl;
+    customCss.innerHTML = `
     @font-face 
     {
         font-family: "Custom Font";
@@ -25,22 +20,27 @@ inputFile.addEventListener('change',async function(e)
     }
     .pageExtra
     {
-        ${state.margin?'':'display: none;'}
+        ${state.margin ? "" : "display: none;"}
     } 
     .page,.pageLeft
     {
-        ${state.ruled?'background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;':''}
+        ${
+            state.ruled
+                ? "background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;"
+                : ""
+        }
+    }
+    .pageContainer .drawCanvas {
+        z-index: ${state.editMode === "draw" ? "3" : "1"};
     }
     `;
-    let currPage=document.querySelector('.page');//first page
-    setTimeout(startCorrectingFrom.bind(null,currPage),400);
+    let currPage = document.querySelector(".page"); //first page
+    setTimeout(startCorrectingFrom.bind(null, currPage), 400);
 });
 
-fontSelector.addEventListener('input',async function(e)
-{    
-    state.currentFontUrl=fontObj[e.target.value];
-    customCss.innerHTML=
-    `
+fontSelector.addEventListener("input", async function (e) {
+    state.currentFontUrl = fontObj[e.target.value];
+    customCss.innerHTML = `
     @font-face 
     {
         font-family: "Custom Font";
@@ -48,14 +48,20 @@ fontSelector.addEventListener('input',async function(e)
     }
     .pageExtra
     {
-        ${state.margin?'':'display: none;'}
+        ${state.margin ? "" : "display: none;"}
     } 
     .page,.pageLeft
     {
-        ${state.ruled?'background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;':''}
+        ${
+            state.ruled
+                ? "background-image: linear-gradient(#999 0.05em, transparent 0.1em);background-size: 100% 1.5em;"
+                : ""
+        }
+    }
+    .pageContainer .drawCanvas {
+        z-index: ${state.editMode === "draw" ? "3" : "1"};
     }
     `;
-    let currPage=document.querySelector('.page');//first page
-    setTimeout(startCorrectingFrom.bind(null,currPage),210);
-})
-
+    let currPage = document.querySelector(".page"); //first page
+    setTimeout(startCorrectingFrom.bind(null, currPage), 210);
+});
