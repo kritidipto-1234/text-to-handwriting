@@ -90,5 +90,4 @@ function clearPageDrawings(e) {
         .querySelector(".drawCanvas");
     const newCtx = pageCanvas.getContext("2d");
     newCtx.clearRect(0, 0, pageCanvas.width, pageCanvas.height);
-    console.log(pageCanvas);
 }
